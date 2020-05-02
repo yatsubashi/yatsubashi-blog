@@ -12,7 +12,6 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "rimraf public",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "dev": "gatsby develop",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
@@ -64,7 +63,6 @@
     "eslint-config-blvd": "^1.0.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-prettier": "^3.1.1",
-    "gh-pages": "^2.0.1",
     "prettier": "^2.0.5",
     "rimraf": "^2.6.3"
   }
