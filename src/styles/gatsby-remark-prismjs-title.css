@@ -1,0 +1,20 @@
+/* See: https://github.com/otanu/gatsby-remark-prismjs-title about plugin */
+/* See: 'prismjs/themes/prism.css' about styles */
+/* TODO: Import styles from prismjs automatically (DO NOT code yourself). */
+
+.gatsby-code-title {
+  display: block;
+  position: relative;
+  background: #f5f2f0;
+  width: 100%;
+  top: 10px;
+}
+
+.gatsby-code-title span {
+  display: inline-block;
+  position: relative;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  color: #ffffff;
+  background: #777;
+  padding: 2px 5px;
+}
