@@ -2,7 +2,7 @@
   "extends": ["config:base"],
   "baseBranches": ["develop"],
   "timezone": "Asia/Tokyo",
-  "schedule": "earlyFridays",
+  "schedule": "weekly",
   "labels": ["renovate"],
   "separateMinorPatch": true,
   "patch": {
