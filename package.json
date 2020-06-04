@@ -20,7 +20,7 @@
     "type-check": "tsc"
   },
   "engines": {
-    "node": "~12.12"
+    "node": "~12.18.0"
   },
   "dependencies": {
     "@emotion/core": "10.0.28",
