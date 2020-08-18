@@ -12,6 +12,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "rimraf public",
+    "reset": "rimraf public .cache node_modules",
     "dev": "gatsby develop",
     "format": "prettier --write \"./**/*.{js,ts,tsx,md,json}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
