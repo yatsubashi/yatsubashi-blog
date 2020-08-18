@@ -25,14 +25,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       createNodeField({
         node,
         name: 'slug',
-        value: slug || ''
+        value: slug || '',
       })
 
       // Used to determine a page layout.
       createNodeField({
         node,
         name: 'layout',
-        value: layout || ''
+        value: layout || '',
       })
     }
   }
@@ -78,8 +78,8 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/${layout || 'page'}.tsx`),
       context: {
         // Data passed to context is available in page queries as GraphQL variables.
-        slug
-      }
+        slug,
+      },
     })
   })
 }
