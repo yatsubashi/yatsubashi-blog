@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-typescript-plus",
-  "description": "A starter kit for TypeScript-based Gatsby projects with sensible defaults.",
-  "version": "1.0.0",
+  "name": "yatsubashi.com",
+  "description": "A personal website.",
+  "author": "yatsubashi",
   "private": true,
-  "author": "Resi Respati <resir014@gmail.com>",
+  "version": "0.1.0",
   "keywords": [
     "gatsby"
   ],
