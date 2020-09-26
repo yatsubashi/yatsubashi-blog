@@ -36,7 +36,6 @@ export default `
   img {
     max-width: 100%;
     object-fit: contain;
-    position: relative;
   }
 
   figure {
@@ -129,7 +128,6 @@ export default `
   }
 
   hr {
-    position: relative;
     margin: 1.5rem 0;
     border: 0;
     border-top: 1px solid ${colors.ui.light};
