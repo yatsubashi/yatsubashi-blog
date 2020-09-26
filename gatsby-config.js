@@ -2,11 +2,11 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'yatsubashi.com',
+    title: 'yatsbashy.com',
     description: 'A personal website.',
-    siteUrl: 'https://yatsubashi.com',
+    siteUrl: 'https://yatsbashy.com',
     author: {
-      name: 'Yatsubashi',
+      name: 'Yatsbashy',
     },
   },
   plugins: [
