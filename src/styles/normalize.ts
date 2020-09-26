@@ -15,17 +15,23 @@ export default `
   html {
     font-size: ${dimensions.fontSize.regular}px !important;
     line-height: ${dimensions.lineHeight.regular} !important;
+    font-feature-settings: "palt";
+    letter-spacing: ${dimensions.letterSpacing}px;
   }
 
   body {
     width: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    font-family: ${fonts.sansSerif};
-    color: ${colors.black};
-    background-color: ${colors.white};
+    font-family: ${fonts.yuGothic};
+    color: ${colors.fonts};
+    background-color: ${colors.background};
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+  }
+
+  b, strong, .bold {
+    font-family: ${fonts.yuGothicBold};
   }
 
   a {
@@ -80,7 +86,6 @@ export default `
   h1, h2, h3, h4, h5, h6 {
     margin-top: 1.414rem;
     margin-bottom: .5rem;
-    color: ${colors.black};
     font-weight: 600;
     line-height: ${dimensions.lineHeight.heading};
     text-rendering: optimizeLegibility;
@@ -106,10 +111,6 @@ export default `
   p {
     margin-top: 0;
     margin-bottom: 1rem;
-  }
-
-  strong {
-    color: ${colors.black};
   }
 
   ul,

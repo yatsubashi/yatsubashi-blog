@@ -20,9 +20,15 @@ export const colors = {
   },
   white: '#fff',
   black: '#000',
+  fonts: '#333333',
+  background: '#eaedf2',
 }
 
 export const fonts = {
+  yuGothic:
+    '-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif',
+  yuGothicBold:
+    '-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI semibold", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic", "Segoe UI", Verdana, Meiryo, sans-serif',
   sansSerif:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif',
   serif: 'Georgia, "Times New Roman", Times, serif',
@@ -59,6 +65,7 @@ export const dimensions = {
     heading: 1.2,
   },
   containerPadding: 1.5,
+  letterSpacing: 0.8,
 }
 
 export const heights = {

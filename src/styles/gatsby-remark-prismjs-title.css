@@ -18,3 +18,9 @@
   background: #777;
   padding: 2px 5px;
 }
+
+/* Reset */
+code[class*='language-'],
+pre[class*='language-'] {
+  letter-spacing: normal;
+}
