@@ -31,11 +31,6 @@ export default `
   a {
     color: ${colors.link};
     text-decoration: none;
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
   }
 
   img {
