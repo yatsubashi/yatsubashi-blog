@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 
-import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
 import PostItem from '../components/PostItem'
+import Content from '../components/Content'
 
 interface IndexPageProps {
   data: {
@@ -30,12 +30,12 @@ interface IndexPageProps {
 const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
   <IndexLayout>
     <Container>
-      <Page>
+      <Content>
         <h1>Index Page</h1>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <PostItem node={node}></PostItem>
         ))}
-      </Page>
+      </Content>
     </Container>
   </IndexLayout>
 )
