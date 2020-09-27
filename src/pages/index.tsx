@@ -1,9 +1,10 @@
 import * as React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
+import PostItem from '../components/PostItem'
 
 interface IndexPageProps {
   data: {
@@ -14,7 +15,7 @@ interface IndexPageProps {
             id: string
             frontmatter: {
               title: string
-              layout: string
+              created_at: string
             }
             fields: {
               slug: string
@@ -32,9 +33,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
       <Container>
         <h1>Index Page</h1>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-          </div>
+          <PostItem node={node}></PostItem>
         ))}
       </Container>
     </Page>
@@ -45,13 +44,13 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: frontmatter___created_at, order: DESC }) {
       edges {
         node {
           id
           frontmatter {
             title
-            layout
+            created_at
           }
           fields {
             slug
