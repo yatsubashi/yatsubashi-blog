@@ -28,13 +28,13 @@ interface PageTemplateProps {
 
 const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
   <IndexLayout>
-    <Page>
-      <Container>
+    <Container>
+      <Page>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
         {/* eslint-disable-next-line react/no-danger */}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-      </Container>
-    </Page>
+      </Page>
+    </Container>
   </IndexLayout>
 )
 

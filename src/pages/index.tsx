@@ -29,14 +29,14 @@ interface IndexPageProps {
 
 const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
   <IndexLayout>
-    <Page>
-      <Container>
+    <Container>
+      <Page>
         <h1>Index Page</h1>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <PostItem node={node}></PostItem>
         ))}
-      </Container>
-    </Page>
+      </Page>
+    </Container>
   </IndexLayout>
 )
 
