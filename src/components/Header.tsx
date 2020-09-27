@@ -7,9 +7,10 @@ import { heights, colors } from '../styles/variables'
 import Container from './Container'
 
 const StyledHeader = styled.header`
-  height: ${heights.header}px;
-  background-color: ${colors.brand};
   color: ${transparentize(0.5, colors.white)};
+  height: ${heights.header}px;
+  background-color: ${colors.white};
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 `
 
 const HeaderInner = styled(Container)`
@@ -20,7 +21,7 @@ const HeaderInner = styled(Container)`
 `
 
 const HomepageLink = styled(Link)`
-  color: ${colors.white};
+  color: ${colors.fonts};
   font-size: 1.5rem;
   font-weight: 600;
 `
