@@ -1,21 +1,21 @@
 {
   "name": "yatsbashy.com",
-  "description": "A personal website.",
-  "author": "yatsbashy",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
+  "description": "A personal website.",
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
+  "author": "yatsbashy",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
     "clean": "rimraf public",
-    "reset": "rimraf public .cache node_modules",
     "dev": "gatsby develop",
     "format": "prettier --write \"./**/*.{js,ts,tsx,md,json}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "reset": "rimraf public .cache node_modules",
     "test": "npm run type-check && npm run lint",
     "type-check": "tsc"
   },
@@ -23,9 +23,6 @@
     "hooks": {
       "pre-commit": "npm run format"
     }
-  },
-  "engines": {
-    "node": "~12.x"
   },
   "dependencies": {
     "@emotion/core": "10.0.28",
@@ -71,5 +68,8 @@
     "husky": "4.3.0",
     "prettier": "2.0.5",
     "rimraf": "2.7.1"
+  },
+  "engines": {
+    "node": "~12.x"
   }
 }
