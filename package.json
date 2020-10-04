@@ -19,6 +19,11 @@
     "test": "npm run type-check && npm run lint",
     "type-check": "tsc"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format"
+    }
+  },
   "engines": {
     "node": "~12.x"
   },
@@ -63,6 +68,7 @@
     "eslint-config-blvd": "1.0.2",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
+    "husky": "4.3.0",
     "prettier": "2.0.5",
     "rimraf": "2.7.1"
   }
