@@ -11,11 +11,11 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "clean": "rimraf public",
+    "clean": "rm -rf public",
     "dev": "gatsby develop",
     "format": "prettier --write \"./**/*.{js,ts,tsx,md,json}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "reset": "rimraf public .cache node_modules",
+    "reset": "rm -rf public .cache node_modules",
     "test": "npm run type-check && npm run lint",
     "type-check": "tsc"
   },
@@ -66,8 +66,7 @@
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
     "husky": "4.3.0",
-    "prettier": "2.0.5",
-    "rimraf": "2.7.1"
+    "prettier": "2.0.5"
   },
   "engines": {
     "node": "~12.x"
