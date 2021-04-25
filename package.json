@@ -11,7 +11,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "clean": "rm -rf public",
+    "clean": "rm -rf public .cache",
     "dev": "gatsby develop",
     "format": "prettier --write \"./**/*.{js,ts,tsx,md,json}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
