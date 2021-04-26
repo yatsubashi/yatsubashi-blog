@@ -11,9 +11,7 @@ interface PageTemplateProps {
       siteMetadata: {
         title: string
         description: string
-        author: {
-          name: string
-        }
+        author: string
       }
     }
     markdownRemark: {
@@ -46,9 +44,7 @@ export const query = graphql`
       siteMetadata {
         title
         description
-        author {
-          name
-        }
+        author
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
