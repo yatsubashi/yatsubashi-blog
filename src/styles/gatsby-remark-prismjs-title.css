@@ -1,11 +1,11 @@
 /* See: https://github.com/otanu/gatsby-remark-prismjs-title about plugin */
-/* See: 'prismjs/themes/prism.css' about styles */
+/* See: 'prismjs/themes/prism-okaidia.css' about styles */
 /* TODO: Import styles from prismjs automatically (DO NOT code yourself). */
 
 .gatsby-code-title {
   display: block;
   position: relative;
-  background: #f5f2f0;
+  background: #272822;
   width: 100%;
   top: 10px;
 }
