@@ -24,8 +24,8 @@ export default `
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: ${fonts.yuGothic};
-    color: ${colors.fonts};
-    background-color: ${colors.background};
+    color: ${colors.fontsDark};
+    background-color: ${colors.backgroundDark};
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
   }
@@ -35,7 +35,7 @@ export default `
   }
 
   a {
-    color: ${colors.link};
+    color: ${colors.linkDark};
     text-decoration: none;
   }
 

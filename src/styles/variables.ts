@@ -2,6 +2,7 @@
 
 export const colors = {
   link: '#1111cc',
+  linkDark: '#58a6ff',
   brand: '#663399',
   lilac: '#9d7cbf',
   accent: '#ffb238',
@@ -21,7 +22,9 @@ export const colors = {
   white: '#fff',
   black: '#000',
   fonts: '#333333',
+  fontsDark: '#c9d1d9',
   background: '#eaedf2',
+  backgroundDark: '#0d1117',
 }
 
 export const fonts = {
