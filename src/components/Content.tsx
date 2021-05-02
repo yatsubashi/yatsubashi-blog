@@ -4,10 +4,8 @@ import { colors } from '../styles/variables'
 
 const StyledContent = styled.div`
   margin: 2rem 0;
-  padding: 2.2rem;
+  padding: 1rem;
   background-color: ${colors.backgroundDark};
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 `
 
 interface ContentProps {
