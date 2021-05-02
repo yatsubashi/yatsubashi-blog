@@ -10,14 +10,15 @@ const StyledHeader = styled.header`
   color: ${transparentize(0.5, colors.fontsDark)};
   height: ${heights.header}px;
   background-color: ${colors.backgroundDark};
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 `
 
-const HeaderInner = styled(Container)`
+const HeaderInner = styled.div`
   display: flex;
+  height: 100%;
+  padding: 1rem;
   flex-direction: row;
   align-items: center;
-  height: 100%;
 `
 
 const HomepageLink = styled(Link)`
@@ -32,9 +33,11 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title }) => (
   <StyledHeader>
-    <HeaderInner>
-      <HomepageLink to="/">{title}</HomepageLink>
-    </HeaderInner>
+    <Container>
+      <HeaderInner>
+        <HomepageLink to="/">{title}</HomepageLink>
+      </HeaderInner>
+    </Container>
   </StyledHeader>
 )
 
