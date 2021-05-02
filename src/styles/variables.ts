@@ -22,9 +22,9 @@ export const colors = {
   white: '#fff',
   black: '#000',
   fonts: '#333333',
-  fontsDark: '#c9d1d9',
+  fontsDark: '#adbac7',
   background: '#eaedf2',
-  backgroundDark: '#0d1117',
+  backgroundDark: '#22272e',
 }
 
 export const fonts = {
