@@ -31,7 +31,6 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
   <IndexLayout>
     <Container>
       <Content>
-        <h1>Index Page</h1>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <PostItem key={node.fields.slug} node={node} />
         ))}
