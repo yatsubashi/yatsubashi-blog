@@ -10,12 +10,12 @@
   "author": "yatsbashy",
   "main": "n/a",
   "scripts": {
+    "dev": "gatsby develop -o",
     "build": "gatsby build",
-    "clean": "rm -rf public .cache",
-    "dev": "gatsby develop",
+    "serve": "gatsby serve -o",
+    "clean": "gatsby clean",
     "format": "prettier --write \"./**/*.{js,ts,tsx,md,json}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "reset": "rm -rf public .cache node_modules",
     "test": "npm run type-check && npm run lint",
     "type-check": "tsc"
   },
