@@ -3,32 +3,28 @@ import styled from '@emotion/styled'
 import { transparentize } from 'polished'
 import { Link } from 'gatsby'
 
-import { heights, dimensions, colors } from '../styles/variables'
+import { heights, colors } from '../styles/variables'
 import Container from './Container'
 
 const StyledHeader = styled.header`
+  color: ${transparentize(0.5, colors.fontsDark)};
   height: ${heights.header}px;
-  padding: 0 ${dimensions.containerPadding}rem;
-  background-color: ${colors.brand};
-  color: ${transparentize(0.5, colors.white)};
+  background-color: ${colors.backgroundDark};
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 `
 
-const HeaderInner = styled(Container)`
+const HeaderInner = styled.div`
   display: flex;
+  height: 100%;
+  padding: 1rem;
   flex-direction: row;
   align-items: center;
-  height: 100%;
 `
 
 const HomepageLink = styled(Link)`
-  color: ${colors.white};
+  color: ${colors.fontsDark};
   font-size: 1.5rem;
   font-weight: 600;
-
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
 `
 
 interface HeaderProps {
@@ -37,9 +33,11 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title }) => (
   <StyledHeader>
-    <HeaderInner>
-      <HomepageLink to="/">{title}</HomepageLink>
-    </HeaderInner>
+    <Container>
+      <HeaderInner>
+        <HomepageLink to="/">{title}</HomepageLink>
+      </HeaderInner>
+    </Container>
   </StyledHeader>
 )
 

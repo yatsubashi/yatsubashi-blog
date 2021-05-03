@@ -15,33 +15,33 @@ export default `
   html {
     font-size: ${dimensions.fontSize.regular}px !important;
     line-height: ${dimensions.lineHeight.regular} !important;
+    font-feature-settings: "palt";
+    letter-spacing: ${dimensions.letterSpacing}px;
   }
 
   body {
     width: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    font-family: ${fonts.sansSerif};
-    color: ${colors.black};
-    background-color: ${colors.white};
+    font-family: ${fonts.yuGothic};
+    color: ${colors.fontsDark};
+    background-color: ${colors.backgroundDark};
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
   }
 
-  a {
-    color: ${colors.brand};
-    text-decoration: none;
+  b, strong, .bold {
+    font-family: ${fonts.yuGothicBold};
+  }
 
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
+  a {
+    color: ${colors.linkDark};
+    text-decoration: none;
   }
 
   img {
     max-width: 100%;
     object-fit: contain;
-    position: relative;
   }
 
   figure {
@@ -86,7 +86,6 @@ export default `
   h1, h2, h3, h4, h5, h6 {
     margin-top: 1.414rem;
     margin-bottom: .5rem;
-    color: ${colors.black};
     font-weight: 600;
     line-height: ${dimensions.lineHeight.heading};
     text-rendering: optimizeLegibility;
@@ -114,10 +113,6 @@ export default `
     margin-bottom: 1rem;
   }
 
-  strong {
-    color: ${colors.black};
-  }
-
   ul,
   ol,
   dl {
@@ -134,7 +129,6 @@ export default `
   }
 
   hr {
-    position: relative;
     margin: 1.5rem 0;
     border: 0;
     border-top: 1px solid ${colors.ui.light};
