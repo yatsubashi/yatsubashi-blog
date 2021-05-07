@@ -32,8 +32,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 1140,
-              quality: 90,
+              maxWidth: 820,
               linkImagesToOriginal: false,
             },
           },
@@ -43,6 +42,7 @@ module.exports = {
     'gatsby-transformer-json',
     'gatsby-plugin-emotion',
     'gatsby-plugin-typescript',
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
