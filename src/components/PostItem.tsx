@@ -8,7 +8,7 @@ interface PostItemProps {
     id: string
     frontmatter: {
       title: string
-      created_at: string
+      date: string
     }
     fields: {
       slug: string
@@ -16,27 +16,38 @@ interface PostItemProps {
   }
 }
 
-const Wrapper = styled.div`
-  padding: 0 1rem 1.2rem;
+const PostItemWrapper = styled.div`
   border-bottom: solid 1px ${colors.gray.light};
 `
 
-const Content = styled.div`
+const PostItemLink = styled(Link)`
+  display: block;
+  padding: 1rem;
   color: ${colors.fontsDark};
   &:hover {
     color: ${colors.fontsDarkHighlight};
   }
 `
 
+const PostItemContent = styled.div`
+  h3 {
+    font-size: 1.5rem;
+  }
+  time {
+    display: block;
+    font-size: 1rem;
+  }
+`
+
 const PostItem: React.FC<PostItemProps> = ({ node }) => (
-  <Wrapper>
-    <Link to={node.fields.slug}>
-      <Content>
+  <PostItemWrapper>
+    <PostItemLink to={node.fields.slug}>
+      <PostItemContent>
         <h3>{node.frontmatter.title}</h3>
-        <time>{node.frontmatter.created_at}</time>
-      </Content>
-    </Link>
-  </Wrapper>
+        <time>{node.frontmatter.date}</time>
+      </PostItemContent>
+    </PostItemLink>
+  </PostItemWrapper>
 )
 
 export default PostItem

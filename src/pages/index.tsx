@@ -1,10 +1,27 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 
-import Container from '../components/Container'
-import IndexLayout from '../layouts'
 import PostItem from '../components/PostItem'
-import Content from '../components/Content'
+import Layout from '../components/Layout'
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
+`
 
 interface IndexPageProps {
   data: {
@@ -15,7 +32,7 @@ interface IndexPageProps {
             id: string
             frontmatter: {
               title: string
-              created_at: string
+              date: string
             }
             fields: {
               slug: string
@@ -28,34 +45,11 @@ interface IndexPageProps {
 }
 
 const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
-  <IndexLayout>
-    <Container>
-      <Content>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <PostItem key={node.fields.slug} node={node} />
-        ))}
-      </Content>
-    </Container>
-  </IndexLayout>
+  <Layout>
+    {data.allMarkdownRemark.edges.map(({ node }) => (
+      <PostItem key={node.fields.slug} node={node} />
+    ))}
+  </Layout>
 )
 
 export default IndexPage
-
-export const query = graphql`
-  query {
-    allMarkdownRemark(sort: { fields: frontmatter___created_at, order: DESC }) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            created_at
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  }
-`

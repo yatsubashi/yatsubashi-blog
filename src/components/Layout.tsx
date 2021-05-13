@@ -1,24 +1,23 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import Header from '../components/Header'
-import LayoutRoot from '../components/LayoutRoot'
-import LayoutMain from '../components/LayoutMain'
+import Header from './Header'
+import SiteRoot from './SiteRoot'
+import MainContent from './MainContent'
 
 interface StaticQueryProps {
   site: {
     siteMetadata: {
       title: string
       description: string
-      keywords: string
     }
   }
 }
 
-const IndexLayout: React.FC = ({ children }) => (
+const Layout: React.FC = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query IndexLayoutQuery {
+      query LayoutQuery {
         site {
           siteMetadata {
             title
@@ -28,19 +27,16 @@ const IndexLayout: React.FC = ({ children }) => (
       }
     `}
     render={(data: StaticQueryProps) => (
-      <LayoutRoot>
+      <SiteRoot>
         <Helmet
           title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: data.site.siteMetadata.description },
-            { name: 'keywords', content: data.site.siteMetadata.keywords },
-          ]}
+          meta={[{ name: 'description', content: data.site.siteMetadata.description }]}
         />
         <Header title={data.site.siteMetadata.title} />
-        <LayoutMain>{children}</LayoutMain>
-      </LayoutRoot>
+        <MainContent>{children}</MainContent>
+      </SiteRoot>
     )}
   />
 )
 
-export default IndexLayout
+export default Layout
