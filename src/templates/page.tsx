@@ -45,10 +45,6 @@ interface PageTemplateProps {
   }
 }
 
-const PostContainer = styled.div`
-  padding: 1rem;
-`
-
 const PostCreatedDate = styled.time`
   display: block;
 `
@@ -64,12 +60,12 @@ const PostContent = styled.div`
 
 const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
   <Layout>
-    <PostContainer>
+    <div>
       <PostCreatedDate>{data.markdownRemark.frontmatter.date}</PostCreatedDate>
       <PostTitle>{data.markdownRemark.frontmatter.title}</PostTitle>
       {/* eslint-disable-next-line react/no-danger */}
       <PostContent dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-    </PostContainer>
+    </div>
   </Layout>
 )
 
