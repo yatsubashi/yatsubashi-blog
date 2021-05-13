@@ -5,7 +5,3 @@
  */
 
 // You can delete this file if you're not using it
-
-require('ress/dist/ress.min.css')
-require('prismjs/themes/prism-okaidia.css')
-require('./src/styles/gatsby-remark-prismjs-title.css')

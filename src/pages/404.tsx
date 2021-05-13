@@ -1,21 +1,15 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 
-import Container from '../components/Container'
-import IndexLayout from '../layouts'
-import Content from '../components/Content'
+import Layout from '../components/Layout'
 
 const NotFoundPage = () => (
-  <IndexLayout>
-    <Container>
-      <Content>
-        <h1>404: Page not found.</h1>
-        <p>
-          You've hit the void. <Link to="/">Go back.</Link>
-        </p>
-      </Content>
-    </Container>
-  </IndexLayout>
+  <Layout>
+    <h1>404: Page not found.</h1>
+    <p>
+      You've hit the void. <Link to="/">Go back.</Link>
+    </p>
+  </Layout>
 )
 
 export default NotFoundPage

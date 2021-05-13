@@ -70,7 +70,7 @@ export const dimensions = {
     heading: 1.5,
   },
   containerPadding: 1.5,
-  letterSpacing: 0.8,
+  letterSpacing: 0.3,
 }
 
 export const heights = {

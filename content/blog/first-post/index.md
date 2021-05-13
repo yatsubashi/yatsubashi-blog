@@ -1,7 +1,7 @@
 ---
 layout: page
 title: '初投稿'
-created_at: '2021-05-03'
+date: '2021-05-03'
 ---
 
 はじめまして，ヤツバシと申します。とある会社で働く Web 系エンジニアです。
@@ -24,7 +24,7 @@ created_at: '2021-05-03'
 
 Markdown に載せるソースコードのシンタックスハイライトはひとまず [Prism](https://prismjs.com/) を使うことにしました。実際に書くとこんな感じです。
 
-```ts
+```ts:title=test.ts
 import * as React from 'react'
 import { Global, css } from '@emotion/react'
 import styled from '@emotion/styled'
