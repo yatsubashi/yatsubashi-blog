@@ -58,7 +58,7 @@ const styles = css`
       }
     }
 
-    @media (min-width: ${getEmSize(breakpoints.md)}em) {
+    @media (min-width: ${getEmSize(breakpoints.tablet)}em) {
       padding-right: 5rem;
       padding-left: 1.25rem;
     }
