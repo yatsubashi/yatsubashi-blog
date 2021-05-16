@@ -1,4 +1,4 @@
-import { dimensions, fonts, colors, breakpoints } from './variables'
+import { fonts, colors, breakpoints } from './variables'
 import { getEmSize } from './mixins'
 import { css } from '@emotion/react'
 
@@ -8,14 +8,13 @@ const styles = css`
   html,
   body {
     width: 100%;
+    font-size: 100%;
   }
 
   body {
     color: ${colors.fontsDark};
-    font-size: ${dimensions.fontSize.regular}px !important;
     font-family: ${fonts.yuGothic};
-    line-height: ${dimensions.lineHeight.regular} !important;
-    letter-spacing: ${dimensions.letterSpacing}px;
+    line-height: 1.6;
     background-color: ${colors.backgroundDark};
   }
 
