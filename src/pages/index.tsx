@@ -29,7 +29,7 @@ export const query = graphql`
   }
 `
 
-interface IndexPageProps {
+interface IndexPageQuery {
   site: {
     siteMetadata: {
       title: string
@@ -53,7 +53,7 @@ interface IndexPageProps {
   }
 }
 
-const IndexPage: React.FC<PageProps<IndexPageProps>> = ({ data }) => {
+const IndexPage: React.FC<PageProps<IndexPageQuery>> = ({ data }) => {
   const { site, allMarkdownRemark } = data
 
   return (

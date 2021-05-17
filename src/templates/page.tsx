@@ -24,7 +24,7 @@ export const query = graphql`
   }
 `
 
-interface PageTemplateProps {
+interface PageTemplateQuery {
   site: {
     siteMetadata: {
       title: string
@@ -53,7 +53,7 @@ const PostContent = styled.div`
   ${postContentStyle}
 `
 
-const PageTemplate: React.FC<PageProps<PageTemplateProps>> = ({ data, location }) => {
+const PageTemplate: React.FC<PageProps<PageTemplateQuery>> = ({ data, location }) => {
   const { site, markdownRemark } = data
 
   return (
