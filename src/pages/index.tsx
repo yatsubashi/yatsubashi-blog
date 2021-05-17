@@ -60,7 +60,7 @@ const IndexPage: React.FC<PageProps<IndexPageQuery>> = ({ data }) => {
     <Layout title={site.siteMetadata.title}>
       <SEO />
       {allMarkdownRemark.edges.map(({ node }) => (
-        <PostItem key={node.fields.slug} node={node} />
+        <PostItem key={node.id} node={node} />
       ))}
     </Layout>
   )
