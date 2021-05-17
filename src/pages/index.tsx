@@ -3,9 +3,15 @@ import { graphql } from 'gatsby'
 
 import PostItem from '../components/PostItem'
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 
 export const query = graphql`
-  query {
+  query IndexPageQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
@@ -25,6 +31,11 @@ export const query = graphql`
 
 interface IndexPageProps {
   data: {
+    site: {
+      siteMetadata: {
+        title: string
+      }
+    }
     allMarkdownRemark: {
       edges: [
         {
@@ -44,12 +55,17 @@ interface IndexPageProps {
   }
 }
 
-const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
-  <Layout>
-    {data.allMarkdownRemark.edges.map(({ node }) => (
-      <PostItem key={node.fields.slug} node={node} />
-    ))}
-  </Layout>
-)
+const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
+  const { site, allMarkdownRemark } = data
+
+  return (
+    <Layout title={site.siteMetadata.title}>
+      <SEO />
+      {allMarkdownRemark.edges.map(({ node }) => (
+        <PostItem key={node.fields.slug} node={node} />
+      ))}
+    </Layout>
+  )
+}
 
 export default IndexPage

@@ -4,21 +4,20 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import styled from '@emotion/styled'
 import postContentStyle from '../styles/postContentStyle'
+import SEO from '../components/SEO'
 
 export const query = graphql`
   query PageTemplateQuery($slug: String!) {
     site {
       siteMetadata {
         title
-        description
-        author
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
-      excerpt
       frontmatter {
         title
+        description
         date
       }
     }
@@ -30,15 +29,13 @@ interface PageTemplateProps {
     site: {
       siteMetadata: {
         title: string
-        description: string
-        author: string
       }
     }
     markdownRemark: {
       html: string
-      excerpt: string
       frontmatter: {
         title: string
+        description: string
         date: string
       }
     }
@@ -58,15 +55,23 @@ const PostContent = styled.div`
   ${postContentStyle}
 `
 
-const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
-  <Layout>
-    <div>
-      <PostCreatedDate>{data.markdownRemark.frontmatter.date}</PostCreatedDate>
-      <PostTitle>{data.markdownRemark.frontmatter.title}</PostTitle>
-      {/* eslint-disable-next-line react/no-danger */}
-      <PostContent dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-    </div>
-  </Layout>
-)
+const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => {
+  const { site, markdownRemark } = data
+
+  return (
+    <Layout title={site.siteMetadata.title}>
+      <SEO
+        title={markdownRemark.frontmatter.title}
+        description={markdownRemark.frontmatter.description}
+      />
+      <div>
+        <PostCreatedDate>{markdownRemark.frontmatter.date}</PostCreatedDate>
+        <PostTitle>{markdownRemark.frontmatter.title}</PostTitle>
+        {/* eslint-disable-next-line react/no-danger */}
+        <PostContent dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+      </div>
+    </Layout>
+  )
+}
 
 export default PageTemplate
