@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 
 import Layout from '../components/Layout'
 import styled from '@emotion/styled'
@@ -24,20 +24,18 @@ export const query = graphql`
   }
 `
 
-interface PageTemplateProps {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string
-      }
+interface PageTemplateQuery {
+  site: {
+    siteMetadata: {
+      title: string
     }
-    markdownRemark: {
-      html: string
-      frontmatter: {
-        title: string
-        description: string
-        date: string
-      }
+  }
+  markdownRemark: {
+    html: string
+    frontmatter: {
+      title: string
+      description: string
+      date: string
     }
   }
 }
@@ -55,7 +53,7 @@ const PostContent = styled.div`
   ${postContentStyle}
 `
 
-const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => {
+const PageTemplate: React.FC<PageProps<PageTemplateQuery>> = ({ data, location }) => {
   const { site, markdownRemark } = data
 
   return (
@@ -63,6 +61,7 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => {
       <SEO
         title={markdownRemark.frontmatter.title}
         description={markdownRemark.frontmatter.description}
+        pathname={location.pathname}
       />
       <div>
         <PostCreatedDate>{markdownRemark.frontmatter.date}</PostCreatedDate>
