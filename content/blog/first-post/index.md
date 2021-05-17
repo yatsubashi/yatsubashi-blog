@@ -1,6 +1,7 @@
 ---
 layout: page
 title: '初投稿'
+description: 'このブログの最初の投稿です。'
 date: '2021-05-03'
 ---
 

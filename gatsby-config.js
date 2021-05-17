@@ -3,9 +3,12 @@
 module.exports = {
   siteMetadata: {
     title: 'yatsbashy.com',
-    author: 'Yatsbashy',
-    description: 'A personal website.',
+    author: 'yatsbashy',
+    description: 'ヤツバシの個人ブログ',
     siteUrl: 'https://yatsbashy.com',
+    social: {
+      twitter: `@yatsbashy`,
+    },
   },
   plugins: [
     {
