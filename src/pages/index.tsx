@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 
 import PostItem from '../components/PostItem'
 import Layout from '../components/Layout'
@@ -30,32 +30,30 @@ export const query = graphql`
 `
 
 interface IndexPageProps {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string
-      }
+  site: {
+    siteMetadata: {
+      title: string
     }
-    allMarkdownRemark: {
-      edges: [
-        {
-          node: {
-            id: string
-            frontmatter: {
-              title: string
-              date: string
-            }
-            fields: {
-              slug: string
-            }
+  }
+  allMarkdownRemark: {
+    edges: [
+      {
+        node: {
+          id: string
+          frontmatter: {
+            title: string
+            date: string
+          }
+          fields: {
+            slug: string
           }
         }
-      ]
-    }
+      }
+    ]
   }
 }
 
-const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
+const IndexPage: React.FC<PageProps<IndexPageProps>> = ({ data }) => {
   const { site, allMarkdownRemark } = data
 
   return (
