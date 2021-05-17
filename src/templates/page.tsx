@@ -53,7 +53,7 @@ const PostContent = styled.div`
   ${postContentStyle}
 `
 
-const PageTemplate: React.FC<PageProps<PageTemplateProps>> = ({ data }) => {
+const PageTemplate: React.FC<PageProps<PageTemplateProps>> = ({ data, location }) => {
   const { site, markdownRemark } = data
 
   return (
@@ -61,6 +61,7 @@ const PageTemplate: React.FC<PageProps<PageTemplateProps>> = ({ data }) => {
       <SEO
         title={markdownRemark.frontmatter.title}
         description={markdownRemark.frontmatter.description}
+        pathname={location.pathname}
       />
       <div>
         <PostCreatedDate>{markdownRemark.frontmatter.date}</PostCreatedDate>
