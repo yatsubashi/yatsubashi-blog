@@ -1,11 +1,17 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 
 import PostItem from '../components/PostItem'
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 
 export const query = graphql`
-  query {
+  query IndexPageQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
@@ -23,33 +29,41 @@ export const query = graphql`
   }
 `
 
-interface IndexPageProps {
-  data: {
-    allMarkdownRemark: {
-      edges: [
-        {
-          node: {
-            id: string
-            frontmatter: {
-              title: string
-              date: string
-            }
-            fields: {
-              slug: string
-            }
+interface IndexPageQuery {
+  site: {
+    siteMetadata: {
+      title: string
+    }
+  }
+  allMarkdownRemark: {
+    edges: [
+      {
+        node: {
+          id: string
+          frontmatter: {
+            title: string
+            date: string
+          }
+          fields: {
+            slug: string
           }
         }
-      ]
-    }
+      }
+    ]
   }
 }
 
-const IndexPage: React.FC<IndexPageProps> = ({ data }) => (
-  <Layout>
-    {data.allMarkdownRemark.edges.map(({ node }) => (
-      <PostItem key={node.fields.slug} node={node} />
-    ))}
-  </Layout>
-)
+const IndexPage: React.FC<PageProps<IndexPageQuery>> = ({ data }) => {
+  const { site, allMarkdownRemark } = data
+
+  return (
+    <Layout title={site.siteMetadata.title}>
+      <SEO />
+      {allMarkdownRemark.edges.map(({ node }) => (
+        <PostItem key={node.id} node={node} />
+      ))}
+    </Layout>
+  )
+}
 
 export default IndexPage
